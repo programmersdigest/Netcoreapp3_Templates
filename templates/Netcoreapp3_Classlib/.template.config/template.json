@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Michael Sperber (programmersidgest.de)",
+    "classifications": [ "Common", "Library" ],
+    "identity": "Netcoreapp3_Classlib",
+    "name": ".NET Core 3.0 Class Library",
+    "shortName": "net3_classlib",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "Netcoreapp3_Classlib"
+}

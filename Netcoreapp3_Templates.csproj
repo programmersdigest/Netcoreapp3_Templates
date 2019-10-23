@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageType>Template</PackageType>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Version>1.0</Version>
+        <Authors>Michael Sperber (programmersidgest.de)</Authors>
+        <Company>programmersdigest.de</Company>
+        <Title>Templates for .NET Core 3.0</Title>
+        <Description>dotnet new templates using netcoreapp3.0, C# 8.0, nullable reference types, PublishTrimmed, etc.</Description>
+        <Copyright>Copyright © Michael Sperber (programmersdigest.de) 2019</Copyright>
+        <PackageLicenseUrl></PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/programmersdigest/Netcoreapp3_Templates</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/programmersdigest/Netcoreapp3_Templates</RepositoryUrl>
+        <RepositoryType>github</RepositoryType>
+        <PackageTags>dotnet-new templates netcoreapp3.0</PackageTags>
+        <!-- <PackageIconUrl>https://raw.githubusercontent.com/programmersdigest/Netcoreapp3_Templates/master/Resources/Icon.png</PackageIconUrl> -->
+        <PackageId>programmersdigest.Netcoreapp3_Templates</PackageId>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+
+        <NoPackageAnalysis>true</NoPackageAnalysis>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+        <Compile Remove="**\*" />
+    </ItemGroup>
+</Project>
