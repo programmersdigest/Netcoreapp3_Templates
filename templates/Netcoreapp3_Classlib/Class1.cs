@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace classlib
+namespace Netcoreapp3_Classlib
 {
     public class Class1
     {

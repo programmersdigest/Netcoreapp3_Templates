@@ -9,5 +9,19 @@
         "language": "C#",
         "type": "project"
     },
-    "sourceName": "Netcoreapp3_Classlib"
+    "sourceName": "Netcoreapp3_Classlib",
+    "symbols": {
+        "no-treat-warnings-as-errors": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Disables setting TreatWarningsAsErrors. Nullable reference type errors will only be shown as warnings and not break the build."
+        },
+        "no-test-internals": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Disables setting InternalsVisibleTo for an accompanying test project called '$(AssemblyName).Tests'."
+        }
+    }
 }

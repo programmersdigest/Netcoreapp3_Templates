@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace console
+namespace Netcoreapp3_Trimmed
 {
     class Program
     {

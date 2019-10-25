@@ -8,13 +8,23 @@
   <PropertyGroup>
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors Condition="'$(no-treat-warnings-as-errors)' == 'false'">true</TreatWarningsAsErrors>
   </PropertyGroup>
 
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(trimming)' == 'single-file'">
     <PublishSingleFile>true</PublishSingleFile>
-    <PublishTrimmed>true</PublishTrimmed>
-    <!-- <PublishReadyToRun>true</PublishReadyToRun> -->
+    <PublishReadyToRun Condition="'$(ready-to-run)' == 'true'">true</PublishReadyToRun>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(trimming)' == 'trimmed'">
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishReadyToRun Condition="'$(ready-to-run)' == 'true'">true</PublishReadyToRun>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(no-test-internals)' == 'false'">
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>$(AssemblyName).Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
 
 </Project>
