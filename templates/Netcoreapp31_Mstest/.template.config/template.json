@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Michael Sperber (programmersidgest.de)",
+    "classifications": [ "Common", "Library" ],
+    "identity": "Netcoreapp31_Mstest",
+    "name": ".NET Core 3.1 Unit Test Project",
+    "shortName": "net31_mstest",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "Netcoreapp31_Mstest",
+    "symbols": {
+        "no-treat-warnings-as-errors": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Disables setting TreatWarningsAsErrors. Nullable reference type errors will only be shown as warnings and not break the build."
+        }
+    }
+}

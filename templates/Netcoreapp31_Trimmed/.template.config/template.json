@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Michael Sperber (programmersidgest.de)",
+    "classifications": [ "Common", "Console" ],
+    "identity": "Netcoreapp31_Trimmed",
+    "name": ".NET Core 3.1 Console Application",
+    "shortName": "net31_console",
+    "tags": {
+        "language": "[C#]",
+        "type": "project"
+    },
+    "sourceName": "Netcoreapp31_Trimmed",
+    "symbols": {
+        "no-treat-warnings-as-errors": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Disables setting TreatWarningsAsErrors. Nullable reference type errors will only be shown as warnings and not break the build."
+        },
+        "no-test-internals": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Disables setting InternalsVisibleTo for an accompanying test project called '$(AssemblyName).Tests'."
+        },
+        "trimming": {
+            "type": "parameter",
+            "datatype": "choice",
+            "choices": [
+                {
+                  "choice": "none",
+                  "description": "Do not use special packaging for dotnet publish."
+                },
+                {
+                  "choice": "single-file",
+                  "description": "Produce a single output file."
+                },
+                {
+                  "choice": "trimmed",
+                  "description": "Produce a single output file and perform tree shaking. Requires special attention during testing!"
+                }
+            ],
+            "defaultValue": "trimmed",
+            "description": "Sets the options PublishSingleFile or PublishTrimmed."
+        },
+        "ready-to-run": {
+            "type": "parameter",
+            "datatype": "bool",
+            "defaultValue": "false",
+            "description": "Sets the option PublishReadyToRun. Can only be set with trimming=single-file or trimming=trimmed. Requires building on the correct target runtime (see https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0#readytorun-images)."
+        }
+    }
+}
